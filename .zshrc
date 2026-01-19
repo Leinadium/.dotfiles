@@ -45,5 +45,8 @@ alias zshconfig="vim ~/.zshrc"
 alias exti="exit"
 alias cl='clear'
 alias ls='ls --color'
+alias gst='git status'
+alias gps='git push'
+alias gplr='git pull --rebase'
 
 export GPG_TTY=$(tty)
