@@ -1,3 +1,8 @@
+# powerlevel10k pre setup
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # zinit startup
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -6,8 +11,9 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 source "${ZINIT_HOME}/zinit.zsh"
 
-# theme
-zinit ice depth=1; zinit light nullxception/roundy
+# theme (powerlevel10k) 
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -50,3 +56,4 @@ alias gps='git push'
 alias gplr='git pull --rebase'
 
 export GPG_TTY=$(tty)
+
