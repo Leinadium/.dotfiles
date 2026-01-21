@@ -4,6 +4,7 @@ version = 2
 final_space = true
 console_title_template = '{{ .Shell }} - {{ .Folder }}'
 
+############### LEFT ##############
 [[blocks]]
 type = 'prompt'
 alignment = 'left'
@@ -22,6 +23,13 @@ style = "plain"
 foreground = "#f0f0f0"
 background = "transparent"
 template = "{{ if .SSHSession }} {{ .UserName }}{{ end }}"
+
+[[blocks.segments]]
+type = "root"
+style = "plain"
+foreground = "#111111"
+background = "transparent"
+template = ""
 
 [[blocks.segments]]
 type = 'path'
@@ -56,6 +64,7 @@ foreground_templates = [
 background = 'transparent'
 template = ' ❯'
 
+############ RIGHT ###########
 [[blocks]]
 type = 'rprompt'
 overflow = 'hidden'
@@ -88,10 +97,18 @@ display_default = true
 template = "  {{if .Venv }}venv {{ end }}{{ .Full }} "
 
 [[blocks.segments]]
+type = "sysinfo"
+background = "transparent"
+foreground = "#8f43f3"
+template = " 󰍛 {{ round .PhysicalPercentUsed .Precision }}% "
+style = "plain"
+[blocks.segments.properties]
+precision = 0
+
+[[blocks.segments]]
 type = 'time'
 style = 'plain'
 foreground = 'lightWhite'
-
 [blocks.segments.options]
 time_format = '15:04:05'
 
