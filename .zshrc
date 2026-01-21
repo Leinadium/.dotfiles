@@ -1,3 +1,6 @@
+# path manipulation
+export PATH=$PATH:/home/daniel/.local/bin
+
 # zinit startup
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -40,7 +43,6 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # alias
-# alias
 alias zshconfig="vim ~/.zshrc"
 alias exti="exit"
 alias cl='clear'
@@ -48,6 +50,9 @@ alias ls='ls --color'
 alias gst='git status'
 alias gps='git push'
 alias gplr='git pull --rebase'
+alias gss='git stash'
+alias gssp='git stash pop'
+alias gdf='git diff'
 
 export GPG_TTY=$(tty)
 
