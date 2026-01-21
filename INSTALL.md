@@ -21,9 +21,13 @@ cp ~/Downloads/UbuntuMono/*.ttf ~/.local/share/fonts/
 fc-cache -f -v
 # change terminal font and close all windows
 
+# automanaging config files
+sudo apt install stow
+# installing this project's config files
+stow .
+
 # installing zsh things
 sudo apt install zsh-syntax-highlighting
-
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
 ```
