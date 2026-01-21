@@ -1,0 +1,102 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version = 2
+final_space = true
+console_title_template = '{{ .Shell }} - {{ .Folder }}'
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = false
+
+[[blocks.segments]]
+type = "os"
+style = "plain"
+foreground = "#26C6DA"
+background = "transparent"
+template = '{{.Icon}}  '
+
+[[blocks.segments]]
+type = "session"
+style = "plain"
+foreground = "#f0f0f0"
+background = "transparent"
+template = "{{ if .SSHSession }} {{ .UserName }}{{ end }}"
+
+[[blocks.segments]]
+type = 'path'
+style = 'plain'
+background = 'transparent'
+foreground = 'blue'
+template = '{{ .Path }}'
+
+[blocks.segments.properties]
+style = 'folder'
+folder_icon = ''
+
+[[blocks.segments]]
+type = 'git'
+style = 'plain'
+foreground = 'darkGray'
+background = 'transparent'
+template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} {{ end }}<cyan>{{ if gt .Behind 0 }} ⇣{{ end }}{{ if gt .Ahead 0 }} ⇡{{ end }}</>'
+
+[blocks.segments.properties]
+branch_icon = ''
+commit_icon = '@'
+fetch_status = true
+
+[[blocks.segments]]
+type = 'text'
+style = 'plain'
+foreground_templates = [
+  "{{if gt .Code 0}}red{{end}}",
+  "{{if eq .Code 0}}blue{{end}}",
+]
+background = 'transparent'
+template = ' ❯'
+
+[[blocks]]
+type = 'rprompt'
+overflow = 'hidden'
+
+[[blocks.segments]]
+type = 'executiontime'
+style = 'plain'
+foreground = 'yellow'
+background = 'transparent'
+template = '{{ .FormattedMs }}'
+
+[blocks.segments.properties]
+threshold = 5000
+
+[[blocks.segments]]
+type = 'go'
+style = 'plain'
+foreground = '#7FD5EA'
+background = 'transparent'
+display_mode = 'files'
+fetch_version = false
+template = "  {{ .Full }} "
+
+[[blocks.segments]]
+type = 'python'
+style = 'plain'
+foreground = '#7FD5EA'
+background = 'transparent'
+display_default = true
+template = "  {{if .Venv }}venv {{ end }}{{ .Full }} "
+
+[[blocks.segments]]
+type = 'time'
+style = 'plain'
+foreground = 'lightWhite'
+
+[blocks.segments.options]
+time_format = '15:04:05'
+
+[secondary_prompt]
+background = "transparent"
+foreground = "#ffffff"
+template = "-> "
+
