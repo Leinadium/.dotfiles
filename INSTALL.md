@@ -31,6 +31,9 @@ sudo apt install zsh-syntax-highlighting
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
 
+# tmux
+sudo apt install tmux
+
 # docker
 sudo apt update
 sudo apt install ca-certificates curl
