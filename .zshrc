@@ -7,7 +7,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # theme (oh my posh)
-eval "$(oh-my-posh init zsh --config ${HOME}/.ohmyposh.config.toml)"
+eval "$(oh-my-posh init zsh --config ${HOME}/.ohmyposh.toml)"
 
 # plugins
 zinit light zsh-users/zsh-syntax-highlighting

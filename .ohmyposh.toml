@@ -14,7 +14,7 @@ type = "os"
 style = "plain"
 foreground = "#26C6DA"
 background = "transparent"
-template = '{{.Icon}}  '
+template = '{{.Icon}} '
 
 [[blocks.segments]]
 type = "session"
