@@ -56,3 +56,5 @@ alias gdf='git diff'
 
 export GPG_TTY=$(tty)
 
+# programs
+alias ytdlp="~/rasc/yt-dlp-venv/bin/yt-dlp"

@@ -35,7 +35,7 @@ template = ""
 type = 'path'
 style = 'plain'
 background = 'transparent'
-foreground = 'blue'
+foreground = '#33bbbb'
 template = '{{ .Path }}'
 
 [blocks.segments.properties]
@@ -45,9 +45,9 @@ folder_icon = ''
 [[blocks.segments]]
 type = 'git'
 style = 'plain'
-foreground = 'darkGray'
+foreground = '#797979'
 background = 'transparent'
-template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} {{ end }}<cyan>{{ if gt .Behind 0 }} ⇣{{ end }}{{ if gt .Ahead 0 }} ⇡{{ end }}</>'
+template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} {{ end }}<cyan>{{ if gt .Behind 0 }} ⇣{{ end }}{{ if gt .Ahead 0 }} ⇡{{ end }}</>'
 
 [blocks.segments.properties]
 branch_icon = ''
