@@ -34,6 +34,9 @@ curl -s https://ohmyposh.dev/install.sh | bash -s
 # tmux
 sudo apt install tmux
 
+# make
+sudo apt-get install build-essential
+
 # docker
 sudo apt update
 sudo apt install ca-certificates curl
