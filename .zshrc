@@ -53,8 +53,15 @@ alias gplr='git pull --rebase'
 alias gss='git stash'
 alias gssp='git stash pop'
 alias gdf='git diff'
+alias k='kubectl'
+alias py='python3'
 
 export GPG_TTY=$(tty)
 
 # programs
 alias ytdlp="~/rasc/yt-dlp-venv/bin/yt-dlp"
+
+# go
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
