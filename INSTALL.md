@@ -6,7 +6,7 @@ sudo apt update
 sudo apt upgrade
 
 sudo apt install curl
-sudo atp install vim
+sudo apt install vim
 
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
@@ -15,8 +15,11 @@ sudo apt install git
 usermod -s /bin/zsh daniel
 
 # fonts
+cd ~/Downloads
 curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/UbuntuMono.tar.xz
-tar -xzvf ~/Downloads/UbuntuMono UbuntuMono.tar.xz
+mkdir UbuntuMono && cd UbuntuMono
+tar -xzvf i../UbuntuMono.tar.xz
+mkdir -p ~/.local/share/fonts
 cp ~/Downloads/UbuntuMono/*.ttf ~/.local/share/fonts/
 fc-cache -f -v
 # change terminal font and close all windows

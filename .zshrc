@@ -1,5 +1,5 @@
 # path manipulation
-export PATH=$PATH:/home/daniel/.local/bin
+export PATH=$PATH:/home/${USER}/.local/bin
 
 # zinit startup
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
