@@ -84,7 +84,7 @@ type = 'git'
 style = 'plain'
 foreground = '#707070'
 background = 'transparent'
-template = '{{ .UpstreamIcon }}  {{ if or .Staging.Changed .Working.Changed }}{{ .Working.String }}{{ else }}{{ .ShortHash }}{{ end }}{{ if gt .Behind 0 }} ⇣{{ .Behind }}{{ end }}{{ if gt .Ahead 0 }} ⇡{{ .Ahead  }}{{ end }} '
+template = '{{ .UpstreamIcon }} {{ if .Staging.Changed  }} {{ .Staging.String }}{{ else }}{{ if .Working.Changed }} {{ .Working.String }}{{ else }} {{ .ShortHash }}{{ end }}{{ end }}{{ if gt .Behind 0 }} ⇣{{ .Behind }}{{ end }}{{ if gt .Ahead 0 }} ⇡{{ .Ahead  }}{{ end }} '
 
 [blocks.segments.properties]
 branch_icon = ''
@@ -93,11 +93,11 @@ fetch_status = true
 fetch_upstream_icon = true
 
 [blocks.segments.properties.status_formats]
-Unmerged = " <#6e4949> %d</>"
-Deleted  = " <#6e4949>󰆴 %d</>"
-Added =  " <#326e30>󰙴 %d</>"
-Modified = " <#30466e>󰷈 %d</>"
-Untracked = " <#6e6c30>󱪗 %d</>"
+Unmerged = " <lightRed> %d</>"
+Deleted  = " <lightRed>󰆴 %d</>"
+Added =  " <lightGreen>󰙴 %d</>"
+Modified = " <lightBlue>󰷈 %d</>"
+Untracked = " <lightMagenta>󱪗 %d</>"
 
 [[blocks.segments]]
 type = 'go'
