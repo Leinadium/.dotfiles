@@ -15,7 +15,7 @@ type = "os"
 style = "plain"
 foreground = "#26C6DA"
 background = "transparent"
-template = '{{.Icon}} '
+template = '{{.Icon}}  '
 
 [[blocks.segments]]
 type = "session"
@@ -47,12 +47,12 @@ type = 'git'
 style = 'plain'
 foreground = '#797979'
 background = 'transparent'
-template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} {{ end }}<cyan>{{ if gt .Behind 0 }} ⇣{{ end }}{{ if gt .Ahead 0 }} ⇡{{ end }}</>'
+template = ' <d> {{ if or .Staging.Changed .Working.Changed }}*{{ end }}{{ .HEAD }}</d>'
 
 [blocks.segments.properties]
 branch_icon = ''
-commit_icon = '@'
 fetch_status = true
+fetch_upstream_icon = true
 
 [[blocks.segments]]
 type = 'text'
@@ -78,6 +78,26 @@ template = '{{ .FormattedMs }}'
 
 [blocks.segments.properties]
 threshold = 5000
+
+[[blocks.segments]]
+type = 'git'
+style = 'plain'
+foreground = '#797979'
+background = 'transparent'
+template = '{{ .UpstreamIcon }}  <d>{{ if or .Staging.Changed .Working.Changed }}({{ .Working.String }})</d>{{ end }}{{ if gt .Behind 0 }}{{ .Behind }}⇣{{ end }}{{ if gt .Ahead 0 }}{{ .Ahead  }}⇣{{ end }} '
+
+[blocks.segments.properties]
+branch_icon = ''
+commit_icon = '@'
+fetch_status = true
+fetch_upstream_icon = true
+
+[blocks.segments.properties.status_formats]
+Unmerged = " <red> %d</>"
+Deleted  = " <red>󰆴 %d</>"
+Added =  " <green>󰙴 %d</>"
+Modified = " <blue>󰷈 %d</>"
+Untracked = " <yellow>󱪗 %d</>"
 
 [[blocks.segments]]
 type = 'go'
