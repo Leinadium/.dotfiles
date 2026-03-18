@@ -49,10 +49,10 @@ alias cl='clear'
 alias ls='ls --color'
 alias gst='git status'
 alias gps='git push'
+alias gpsf='git push --force'
 alias gplr='git pull --rebase'
 alias gss='git stash'
 alias gssp='git stash pop'
-alias gdf='git diff'
 alias k='kubectl'
 alias py='python3'
 
@@ -60,8 +60,17 @@ export GPG_TTY=$(tty)
 
 # programs
 alias ytdlp="~/rasc/yt-dlp-venv/bin/yt-dlp"
+alias pdfmerge="~/rasc/merge/venv/bin/pdfmerge"
+
+alias msh="multipass shell"
+alias mup="multipass start"
+alias mdown="multipass stop"
+alias lcontract='CONTRACTS_URL="http://localhost:8484" contract'
+alias scontract='CONTRACTS_URL="https://contracts.staging.canonical.com" contract'
+alias pcontract='CONTRACTS_URL="https://contracts.canonical.com" contract'
 
 # go
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:$(go env GOPATH)/bin
