@@ -22,7 +22,7 @@ type = "session"
 style = "plain"
 foreground = "#f0f0f0"
 background = "transparent"
-template = "{{ if .SSHSession }} {{ .UserName }}{{ end }}"
+template = "{{ if .SSHSession }}{{ .HostName }}   {{ end }}"
 
 [[blocks.segments]]
 type = "root"
